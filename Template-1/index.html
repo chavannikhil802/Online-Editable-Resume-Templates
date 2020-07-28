@@ -1,21 +1,50 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
-        crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="style.css">
+        <!-- CSS FILES -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+            crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="css/style.css">
+        <!-- END OF CSS FILES -->
+        <!-- SCRIPT FILE -->
+            <script src="js/script.js"></script>
+        <!-- END OF SCRIPT FILE -->
+
+        <!-- Following JS Code is use to prompt the user from refreshing the page -->
+        <script type="text/javascript">
+            window.onbeforeunload = function() {
+                return "Are you sure you want to refresh the page? All the data will be lost.";
+            }
+        </script> 
+        <!-- End of code -->
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173899452-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-173899452-1');
+        </script>
+        <!-- End of Google Tag -->
+
+        
         <title>
-            Custom HTML Form Design using HTML
+            Online Editable Single Page Resume Template by Nikhil Narendra Chavan
         </title>
+        <meta name="description" content="An Online Single Resume Template that is editable on the Web Browser designed by Nikhil Narendra Chavan by Nikhil Narendra Chavan. 
+                                          The user can make changes in the  Online Editable Single Page Resume Template according to his needs.">
+        <meta name="robots" content="index, follow" />
     </head>
     <body>
         <div class="container">
             <!-- Code for the top-row -->
             <div class="row top-row">
                 <!-- Code for the left column -->
-                <div class="col">
+                <div class="col" contenteditable="true">
                     <h1>
                          Jane Doe
                     </h1>
@@ -29,17 +58,17 @@
                 </div>
                 <!-- End of Left Column -->
                 <!-- Code for the Middle Column -->
-                <div class="col-5" id="middle-col">
+                <div class="col-5" id="middle-col" contenteditable="true">
                     <p>your_email@gmail.com</p>
                     <p>+1111111111</p>
                     <p>City, State</p>
-                    <p><a href="https://www.your_linkedin_link.com/" target="_blank">
-                         https://www.your_linkedin_link</a></p>
+                    <p id="linkedIn" onclick="getURL('linkedIn')" style="cursor:pointer;">
+                         https://www.your_linkedin_link</p>
                     <p>skype id</p>
                 </div>
                 <!-- End of Middle Column -->
                 <!-- Code for Right Column -->
-                <div class="col-1">
+                <div class="col-1" contenteditable="true">
                     <p><i class="fa fa-envelope" style="font-size:20px;"></i></p>
                     <p><i class="fa fa-mobile-phone" style="font-size:21px;"></i></p>
                     <p><i class="fa fa-map-marker" style="font-size:21px"></i></p>
@@ -49,7 +78,7 @@
                 <!-- End of Right Column -->
             </div>
             <!-- End of top-row -->
-            <!-- <hr> tag is used to add a line on the html page -->
+            <!-- <hr> tag is used to add a horizontal line on the html page -->
             <hr>
             <!-- End of hr tag -->
             <!-- Code for the body of the resume -->
@@ -57,7 +86,7 @@
                 <!-- Start of col 1 -->
                 <div class="col">
                     <!-- Code to enter the work experience sections-->
-                    <div class="work-experience">
+                    <div class="work-experience" contenteditable="true">
                         <!-- Code for Work Experience -->
                         <h4>
                             <strong>WORK EXPERIENCE</strong>
@@ -99,7 +128,7 @@
                             <div class="col">
                                 <em>From Date - To Date</em>
                             </div>
-                            <div class="col"  style="text-align:right;">
+                            <div class="col"  style="text-align:right;" >
                                 <em>City, State</em>
                             </div>
                         </div>
@@ -121,7 +150,7 @@
                     <!-- End of Work Experience -->
                     <hr>
                     <!-- Code for Education -->
-                    <div class="education">
+                    <div class="education" contenteditable="true">
                         <h4>
                             <strong>EDUCATION</strong>
                         </h4>
@@ -171,7 +200,7 @@
                     <!-- End of Education Code -->
                     <hr>
                     <!-- Code for Language -->
-                    <div class="language">
+                    <div class="language"  contenteditable="true">
                         <h4>
                             <strong>LANGUAGES</strong>
                         </h4>
@@ -202,7 +231,7 @@
                 <!-- Start of col 2 -->
                 <div class="col">
                     <!-- Code for Skills -->
-                    <div class="skills">
+                    <div class="skills"  contenteditable="true">
                         <h4>
                             <strong>SKILLS</strong>
                         </h4>
@@ -210,19 +239,19 @@
                             <!-- Code to display Skill Name -->
                             <div class="col-2">
                                 <p>Skill 1</p>
-                                <p>Skill 2</p>
-                                <p>Skill 3</p>
+                                <p></p>Skill 2</p>
+                                <p></p>Skill 3</p>
                                 <p>Skill 4</p>
                                 <p>Skill 5</p>
                             </div>
                             <!-- End of Skill Name -->
                             <!-- Code to display Skill Value -->
                             <div class="col-4">
-                                <progress value = "50" max = "100"></progress>
-                                <progress value = "50" max = "100"></progress>
-                                <progress value = "50" max = "100"></progress>
-                                <progress value = "50" max = "100"></progress>
-                                <progress value = "50" max = "100"></progress>
+                                <progress value = "5" id="skill1" max = "10" onclick="getValue('skill1')" style="cursor:pointer;"></progress>
+                                <progress value = "5" id="skill2" max = "10" onclick="getValue('skill2')" style="cursor:pointer;"></progress>
+                                <progress value = "5" id="skill3" max = "10" onclick="getValue('skill3')" style="cursor:pointer;"></progress>
+                                <progress value = "5" id="skill4" max = "10" onclick="getValue('skill4')" style="cursor:pointer;"></progress>
+                                <progress value = "5" id="skill5" max = "10" onclick="getValue('skill5')" style="cursor:pointer;"></progress>
                             </div>
                             <!-- End of Skill Value -->
                             <!-- class for vertical line -->
@@ -239,11 +268,11 @@
                             <!-- End of Skill Name -->
                             <!-- Code of Skill Value -->
                             <div class="col-4">
-                                <progress value = "50" max = "100"></progress>
-                                <progress value = "50" max = "100"></progress>
-                                <progress value = "50" max = "100"></progress>
-                                <progress value = "50" max = "100"></progress>
-                                <progress value = "50" max = "100"></progress>
+                                <progress value = "5" id="skill6" max = "10" onclick="getValue('skill6')" style="cursor:pointer;"></progress>
+                                <progress value = "5" id="skill7" max = "10" onclick="getValue('skill7')" style="cursor:pointer;"></progress>
+                                <progress value = "5" id="skill8" max = "10" onclick="getValue('skill8')" style="cursor:pointer;"></progress>
+                                <progress value = "5" id="skill9" max = "10" onclick="getValue('skill9')" style="cursor:pointer;"></progress>
+                                <progress value = "5" id="skill10" max = "10" onclick="getValue('skill10')" style="cursor:pointer;"></progress>
                             </div>
                             <!-- End of Skill Value -->
                         </div>
@@ -251,7 +280,7 @@
                     <!-- End of Skills -->
                     <hr>
                     <!-- Code for Proects -->
-                    <div class="projects">
+                    <div class="projects" contenteditable="true">
                         <h4>
                             <strong>PROJECTS</strong>
                         </h4>
@@ -272,7 +301,7 @@
                             </h5>
                             <ul>
                                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus.</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus.</li>                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus.</li>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus.</li>                                
                                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus.</li>
                                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus.</li>
                             </ul>
@@ -283,7 +312,7 @@
                             </h5>
                             <ul>
                                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus.</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus.</li>                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus.</li>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus.</li>                                
                                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus.</li>
                                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus.</li>
                             </ul>
@@ -294,7 +323,7 @@
                             </h5>
                             <ul>
                                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus.</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus.</li>                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus.</li>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus.</li>                                
                                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus.</li>
                                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus.</li>
                             </ul>
@@ -305,7 +334,7 @@
                             </h5>
                             <ul>
                                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus.</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus.</li>                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus.</li>
+                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus.</li>                                
                                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus.</li>
                                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras dapibus.</li>
                             </ul>
@@ -314,32 +343,36 @@
                     <!-- End of Projects -->
                     <hr>
                     <!-- Code for Certificates -->
-                    <div class="certificates">
+                    <div class="certificates" contenteditable="true">
                         <h4>
                             <strong>CERTIFICATES</strong>
                         </h4>
                         <div class="certificate">
                             <ul>
-                                <li><a href="https://www.your_link_here.com/" target="_blank">Certificate 1</a></li>
-                                <li><a href="https://www.your_link_here.com/" target="_blank">Certificate 2</a></li>
-                                <li>Certificate 3</li>
-                                <li>Certificate 4</li>
+                                <li>Certificate Plain Text 1</li>
+                                <li>Certificate Plain Text 2</li>
+                                <li>Certificate Plain Text 3</li>
+                                <li id="cer4" onclick="getURL('cer4')" style="cursor:pointer;">Certificate URL Link 4</li>
+                                <li id="cer5" onclick="getURL('cer5')" style="cursor:pointer;">Certificate URL Link 5</li>
+                                <li id="cer6" onclick="getURL('cer6')" style="cursor:pointer;">Certificate URL Link 6</li>
                             </ul>
                         </div>
                     </div>
                     <!-- end of certificates -->
                     <hr>
                     <!-- Code for achivements -->
-                    <div class="achievements">
+                    <div class="achievements" contenteditable="true">
                         <h4>
                             <strong>ACHIEVEMENTS</strong>
                         </h4>
                         <div class="achievement">
                             <ul>
-                                <li><a href="https://www.your_link_here.com/" target="_blank">Achievement 1</a></li>
-                                <li><a href="https://www.your_link_here.com/" target="_blank">Achievement 2</a></li>
-                                <li>Achievement 3</li>
-                                <li>Achievement 4</li>
+                                <li>Achievement Plain Text 1</li>
+                                <li>Achievement Plain Text 2</li>
+                                <li>Achievement Plain Text 3</li>
+                                <li id="ach4" onclick="getURL('ach4')" style="cursor:pointer;">Achievement URL Link 4</li>
+                                <li id="ach5" onclick="getURL('ach5')" style="cursor:pointer;">Achievement URL Link 5</li>
+                                <li id="ach6" onclick="getURL('ach6')" style="cursor:pointer;">Achievement URL Link 6</li>
                             </ul>
                         </div>
 
@@ -350,5 +383,6 @@
             </div>
             <!-- End of resume body -->
         </div>
+        <div id="elementH"></div>
     </body>
 </html>
